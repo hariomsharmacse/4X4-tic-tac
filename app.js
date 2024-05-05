@@ -39,7 +39,7 @@ function checkWin(){
         if(pattern0 != "" && pattern1 != "" && pattern2 != "" && pattern3 != ""){
             if(pattern0 == pattern1 && pattern1 == pattern2 && pattern2 == pattern3){
                 winningMsg.innerText = `Winner is ${pattern0}`;
-                const end = Date.now() + 15 * 100000;
+                const end = Date.now() + 15 * 100;
 
 // go Buckeyes!
 const colors = ["#bb0000", "#ffffff"];
