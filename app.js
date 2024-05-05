@@ -39,6 +39,32 @@ function checkWin(){
         if(pattern0 != "" && pattern1 != "" && pattern2 != "" && pattern3 != ""){
             if(pattern0 == pattern1 && pattern1 == pattern2 && pattern2 == pattern3){
                 winningMsg.innerText = `Winner is ${pattern0}`;
+                const end = Date.now() + 15 * 100000;
+
+// go Buckeyes!
+const colors = ["#bb0000", "#ffffff"];
+
+(function frame() {
+  confetti({
+    particleCount: 2,
+    angle: 60,
+    spread: 55,
+    origin: { x: 0 },
+    colors: colors,
+  });
+
+  confetti({
+    particleCount: 2,
+    angle: 120,
+    spread: 55,
+    origin: { x: 1 },
+    colors: colors,
+  });
+
+  if (Date.now() < end) {
+    requestAnimationFrame(frame);
+  }
+})();
                 boxes.forEach((box) => {
                     box.disabled = true;
                 })
